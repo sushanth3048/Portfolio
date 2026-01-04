@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sushanth Kummari | IAM & CyberArk Engineer</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --primary:#7c7cff;
+  --secondary:#38bdf8;
+  --bg:#020617;
+  --card:rgba(255,255,255,0.05);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  font-family:'Inter',sans-serif;
+  background:radial-gradient(circle at right, #2b1d4f, #020617 55%);
+  color:#e5e7eb;
+}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;width:100%;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:18px 70px;z-index:999;
+  background:rgba(2,6,23,.6);backdrop-filter:blur(14px);
+}
+nav h3{margin:0;color:var(--primary)}
+nav a{margin-left:25px;color:#cbd5f5;text-decoration:none;font-size:.95rem}
+nav a:hover{color:var(--secondary)}
+
+/* HERO */
+.hero{
+  min-height:100vh;display:flex;align-items:center;gap:80px;
+  padding:140px 80px 80px;
+}
+.hero h1{font-size:3.2rem;margin-bottom:10px}
+.hero h1 span{color:var(--primary)}
+.hero h2{
+  font-size:2.4rem;
+  background:linear-gradient(90deg,var(--primary),var(--secondary));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+}
+.hero p{max-width:620px;opacity:.8;margin:25px 0}
+.hero button{
+  width:100%;max-width:520px;
+  padding:16px;border:none;border-radius:12px;
+  font-size:1rem;font-weight:600;
+  background:linear-gradient(90deg,var(--primary),var(--secondary));
+  cursor:pointer;
+}
+.hero img{
+  width:260px;height:260px;border-radius:50%;object-fit:cover;
+  border:4px solid var(--secondary);
+  box-shadow:0 0 50px rgba(56,189,248,.45);
+  animation:float 4s ease-in-out infinite;
+}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+
+/* SECTIONS */
+section{padding:120px 80px;opacity:0;transform:translateY(60px);transition:.9s}
+section.show{opacity:1;transform:none}
+section h2{font-size:2.2rem;margin-bottom:10px}
+.subtitle{opacity:.7;margin-bottom:50px}
+
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:30px}
+.card{
+  background:var(--card);
+  padding:28px;border-radius:18px;
+  border:1px solid rgba(255,255,255,.08);
+  backdrop-filter:blur(14px);
+  transition:.35s
+}
+.card:hover{transform:translateY(-10px);border-color:var(--secondary);box-shadow:0 0 30px rgba(56,189,248,.25)}
+.card h3{color:var(--secondary);margin-top:0}
+
+footer{text-align:center;padding:50px;background:#020617}
+footer a{color:var(--secondary);margin:0 10px;text-decoration:none}
+
+@media(max-width:900px){
+  nav{padding:15px 30px}
+  .hero{flex-direction:column-reverse;text-align:center;padding:140px 30px}
+  section{padding:100px 30px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <h3>Sushanth Kummari</h3>
+  <div>
+    <a href="#expertise">Expertise</a>
+    <a href="#projects">Projects</a>
+    <a href="#tools">Tools</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div>
+    <h1>I’m <span>Sushanth</span></h1>
+    <h2 id="typing"></h2>
+    <p>IAM-focused Systems Engineer with 5+ years of experience specializing in CyberArk PAM, Active Directory, Azure AD and automation‑driven security solutions.</p>
+    <button onclick="document.querySelector('#expertise').scrollIntoView({behavior:'smooth'})">Explore My Work</button>
+  </div>
+  <img src="SKnG.jpg" alt="Profile">
+</div>
+
+<section id="expertise">
+  <h2>🚀 Core Expertise</h2>
+  <p class="subtitle">What I specialize in</p>
+  <div class="grid">
+    <div class="card"><h3>🏗 Designing Scalable Infrastructure</h3>Secure, high‑availability enterprise systems across on‑prem & cloud.</div>
+    <div class="card"><h3>🤖 Automation Engineering</h3>PowerShell & Python scripting with API‑based automation to eliminate manual operations.</div>
+    <div class="card"><h3>🔐 CyberArk PAM</h3>Safes, platforms, policies, onboarding & privileged lifecycle control.</div>
+    <div class="card"><h3>🧬 IAM Solutions</h3>Identity lifecycle, access governance & directory integrations.</div>
+    <div class="card"><h3>🧪 POC Development</h3>Rapid validation of security & automation ideas.</div>
+    <div class="card"><h3>⚙ Operations & Implementation</h3>Enterprise‑grade deployments, monitoring & support.</div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>📂 Key Projects</h2>
+  <p class="subtitle">Real‑world problems solved</p>
+  <div class="grid">
+    <div class="card"><h3>🔐 CyberArk PAM Automation</h3>Automated privileged account onboarding using PowerShell.</div>
+    <div class="card"><h3>📜 PKI Certificate Automation</h3>Automated issuance, renewal & expiry alerts.</div>
+    <div class="card"><h3>🛠 BigFix Patch Orchestration</h3>Patch compliance automation across environments.</div>
+  </div>
+</section>
+
+<section id="tools">
+  <h2>🧰 Tools & Technologies</h2>
+  <p class="subtitle">My daily tech stack</p>
+  <div class="grid">
+    <div class="card"><h3>⚡ Automation</h3>PowerShell · Python · REST APIs</div>
+    <div class="card"><h3>🔐 IAM & Security</h3>CyberArk · Active Directory · Azure AD · PKI</div>
+    <div class="card"><h3>☁ Infrastructure</h3>Windows Server · IIS · AWS EC2 · BigFix</div>
+  </div>
+</section>
+
+<section id="about">
+  <h2>👋 About Me</h2>
+  <p class="subtitle">Who I am</p>
+  <p>I’m passionate about simplifying security through automation and building resilient IAM solutions that scale with the business.</p>
+  <p>
+    Experienced Identity and Access Management (IAM) professional with deep expertise
+    in CyberArk Privileged Access Management, PKI certificate management, and
+    Active Directory / Azure Active Directory (Entra ID).
+    <br><br>
+    Proven track record in automating privileged account onboarding, certificate
+    renewal, and BigFix patch management across on-premises and AWS EC2 environments.
+    Skilled in designing end-to-end automation workflows using PowerShell and Python
+    to improve security, compliance, and operational efficiency.
+    <br><br>
+    Adept at implementing least-privilege access models, maintaining audit-ready
+    environments, and collaborating with cross-functional teams to strengthen
+    enterprise security posture.
+  </p>
+
+</section>
+
+<section id="contact">
+  <h2>📬 Contact</h2>
+  <p class="subtitle">Let’s connect</p>
+  <div class="grid">
+    <div class="card">📧 Email<br><a href="mailto:sushanth3048@gmail.com" style="color:#38bdf8">Drop Email</a></div>
+    <div class="card">🔗 LinkedIn<br><a href="https://www.linkedin.com/in/sushanth-kng-844b73161" style="color:#38bdf8">🔗</a></div>
+    <div class="card">💻 GitHub<br><a href="https://github.com/sushanth3048" style="color:#38bdf8">🔗</a></div>
+    <div class="card">📄 Resume<br><a href="https://sushanth3048.github.io/iamsushanth/" style="color:#38bdf8">Download 🔗</a></div>
+</div>
+
+  </div>
+</section>
+
+<footer>
+  © 2026 Sushanth Kummari | IAM & CyberArk Engineer
+</footer>
+
+<script>
+/* scroll reveal */
+const sections=document.querySelectorAll('section');
+const io=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('show')}}),{threshold:.15});
+sections.forEach(s=>io.observe(s));
+
+/* typing effect */
+const text="Systems Engineer III";
+let i=0;const el=document.getElementById('typing');
+(function type(){if(i<text.length){el.textContent+=text[i++];setTimeout(type,80)}})();
+</script>
+
+</body>
+</html>
