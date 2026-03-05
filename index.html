@@ -1,0 +1,1693 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sushanth Kummari | IAM & CyberArk Engineer Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+:root {
+  --primary: #667eea;
+  --secondary: #764ba2;
+  --accent: #38bdf8;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --bg-dark: #0f172a;
+  --bg-darker: #020617;
+  --card-bg: rgba(30, 41, 59, 0.5);
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+  --text-muted: #94a3b8;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg-darker);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* Animated Background */
+.bg-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #0f172a 100%);
+  opacity: 0.15;
+}
+
+.particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--accent);
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: float-particle 20s infinite ease-in-out;
+}
+
+@keyframes float-particle {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translate(100px, -100px) scale(1.5);
+    opacity: 0.3;
+  }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-darker);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border-radius: 10px;
+}
+
+/* Navigation */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8%;
+  z-index: 1000;
+  background: rgba(15, 23, 42, 0.8);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+  animation: slideDown 0.8s ease-out;
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+nav.scrolled {
+  padding: 15px 8%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: glow 3s ease-in-out infinite;
+}
+
+@keyframes glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 5px rgba(102, 126, 234, 0.5));
+  }
+  50% {
+    filter: drop-shadow(0 0 20px rgba(118, 75, 162, 0.8));
+  }
+}
+
+.nav-links {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.nav-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--accent);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: var(--text-primary);
+  transition: 0.3s;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 150px 8% 100px;
+  gap: 80px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  flex: 1;
+  animation: fadeInLeft 1s ease-out;
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.hero-content h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--accent);
+  margin-bottom: 10px;
+  animation: fadeIn 1.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.hero-content h1 {
+  font-size: 4.5rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+  line-height: 1.2;
+  animation: fadeIn 1.8s ease-out;
+}
+
+.hero-content h1 .gradient-text {
+  background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 5s ease infinite;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    filter: hue-rotate(30deg);
+  }
+}
+
+.hero-content h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 25px;
+  animation: fadeIn 2s ease-out;
+}
+
+.typing-cursor {
+  display: inline-block;
+  width: 3px;
+  height: 2rem;
+  background: var(--accent);
+  margin-left: 5px;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  max-width: 600px;
+  margin-bottom: 40px;
+  line-height: 1.8;
+  animation: fadeIn 2.3s ease-out;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  animation: fadeIn 2.5s ease-out;
+}
+
+.btn {
+  padding: 15px 35px;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  position: relative;
+  overflow: hidden;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition: width 0.6s, height 0.6s;
+}
+
+.btn:hover::before {
+  width: 400px;
+  height: 400px;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.6);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-primary);
+  border: 2px solid var(--primary);
+}
+
+.btn-secondary:hover {
+  background: var(--primary);
+  transform: translateY(-3px);
+}
+
+.hero-image {
+  flex: 0 0 400px;
+  position: relative;
+  animation: fadeInRight 1s ease-out;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.hero-image img {
+  width: 400px;
+  height: 400px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid transparent;
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(135deg, var(--primary), var(--secondary), var(--accent)) border-box;
+  box-shadow: 0 20px 60px rgba(102, 126, 234, 0.4);
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.hero-image::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border-radius: 50%;
+  opacity: 0.2;
+  filter: blur(40px);
+  z-index: -1;
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.2;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.3;
+  }
+}
+
+/* Social Links */
+.social-links {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.social-link {
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--card-bg);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-secondary);
+  font-size: 1.3rem;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.social-link:hover {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border-color: transparent;
+  color: white;
+  transform: translateY(-5px) rotate(360deg);
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.5);
+}
+
+/* Section Styles */
+section {
+  padding: 100px 8%;
+  position: relative;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s ease;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.section-header h2 {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 15px;
+  position: relative;
+  display: inline-block;
+}
+
+.section-header h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--primary), var(--secondary));
+  border-radius: 2px;
+}
+
+.section-header p {
+  color: var(--text-muted);
+  font-size: 1.2rem;
+  margin-top: 20px;
+}
+
+/* Expertise Cards */
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.expertise-card {
+  background: var(--card-bg);
+  padding: 40px 30px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.expertise-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.2), transparent);
+  transition: left 0.6s;
+}
+
+.expertise-card:hover::before {
+  left: 100%;
+}
+
+.expertise-card:hover {
+  transform: translateY(-10px);
+  border-color: rgba(102, 126, 234, 0.5);
+  box-shadow: 0 20px 50px rgba(102, 126, 234, 0.3);
+}
+
+.expertise-card .icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.expertise-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: var(--text-primary);
+}
+
+.expertise-card p {
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+/* Experience Timeline */
+.timeline {
+  max-width: 1000px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--primary), var(--secondary));
+  transform: translateX(-50%);
+}
+
+.timeline-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.timeline-item:nth-child(odd) .timeline-content {
+  text-align: right;
+  padding-right: 40px;
+}
+
+.timeline-item:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.timeline-item:nth-child(even) .timeline-content {
+  text-align: left;
+  padding-left: 40px;
+}
+
+.timeline-content {
+  flex: 1;
+  background: var(--card-bg);
+  padding: 30px;
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+  transform: scale(1.05);
+  border-color: var(--primary);
+  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
+}
+
+.timeline-dot {
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 20px rgba(102, 126, 234, 0.8);
+  z-index: 1;
+}
+
+.timeline-content h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--accent);
+}
+
+.timeline-content .company {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 5px;
+}
+
+.timeline-content .duration {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+}
+
+/* Skills Section */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.skill-category {
+  background: var(--card-bg);
+  padding: 35px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.skill-category:hover {
+  transform: translateY(-5px);
+  border-color: var(--primary);
+  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
+}
+
+.skill-category h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.skill-category h3 i {
+  font-size: 1.8rem;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-tag {
+  padding: 8px 16px;
+  background: rgba(102, 126, 234, 0.1);
+  border: 1px solid rgba(102, 126, 234, 0.3);
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.skill-tag:hover {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border-color: transparent;
+  color: white;
+  transform: scale(1.1);
+}
+
+/* Projects Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 35px;
+}
+
+.project-card {
+  background: var(--card-bg);
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  transition: all 0.4s ease;
+  position: relative;
+  cursor: pointer;
+}
+
+.project-card::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+  transform: rotate(45deg);
+  transition: all 0.6s ease;
+  opacity: 0;
+}
+
+.project-card:hover::after {
+  opacity: 1;
+  top: -100%;
+  right: -100%;
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--primary);
+  box-shadow: 0 20px 50px rgba(102, 126, 234, 0.4);
+}
+
+.project-header {
+  padding: 30px;
+  background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+}
+
+.project-header h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--text-primary);
+}
+
+.project-header .tech-stack {
+  color: var(--accent);
+  font-size: 0.9rem;
+  font-family: 'Fira Code', monospace;
+}
+
+.project-body {
+  padding: 30px;
+}
+
+.project-body p {
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.project-features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.feature-tag {
+  padding: 5px 12px;
+  background: rgba(56, 189, 248, 0.1);
+  border-radius: 15px;
+  font-size: 0.85rem;
+  color: var(--accent);
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.project-link:hover {
+  color: var(--accent);
+  gap: 15px;
+}
+
+/* Contact Section */
+.contact-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.contact-card {
+  background: var(--card-bg);
+  padding: 40px 30px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  transition: all 0.4s ease;
+  cursor: pointer;
+}
+
+.contact-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--primary);
+  box-shadow: 0 20px 50px rgba(102, 126, 234, 0.4);
+}
+
+.contact-card i {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.contact-card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: var(--text-primary);
+}
+
+.contact-card a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.contact-card a:hover {
+  color: var(--primary);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 50px 8%;
+  background: rgba(15, 23, 42, 0.8);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+footer p {
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+footer .social-links {
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Scroll to Top Button */
+.scroll-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 999;
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.5);
+}
+
+.scroll-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.scroll-top:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(102, 126, 234, 0.7);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .hero {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 50px;
+  }
+
+  .hero-content h1 {
+    font-size: 3.5rem;
+  }
+
+  .hero-image {
+    flex: 0 0 300px;
+  }
+
+  .hero-image img {
+    width: 300px;
+    height: 300px;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timeline-item {
+    flex-direction: column !important;
+  }
+
+  .timeline-item .timeline-content {
+    text-align: left !important;
+    padding: 30px !important;
+  }
+
+  .timeline-dot {
+    left: 20px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    padding: 15px 5%;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 70px;
+    right: -100%;
+    width: 250px;
+    height: calc(100vh - 70px);
+    background: rgba(15, 23, 42, 0.98);
+    backdrop-filter: blur(20px);
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px;
+    gap: 20px;
+    transition: right 0.3s ease;
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+
+  .hero {
+    padding: 120px 5% 80px;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-content h2 {
+    font-size: 1.8rem;
+  }
+
+  section {
+    padding: 80px 5%;
+  }
+
+  .section-header h2 {
+    font-size: 2.2rem;
+  }
+
+  .expertise-grid,
+  .projects-grid,
+  .skills-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Loading Animation */
+.loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-darker);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+.loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.loader-spinner {
+  width: 60px;
+  height: 60px;
+  border: 4px solid rgba(102, 126, 234, 0.2);
+  border-top-color: var(--primary);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Loader -->
+<div class="loader">
+  <div class="loader-spinner"></div>
+</div>
+
+<!-- Background Effects -->
+<div class="bg-animation"></div>
+<div class="particles" id="particles"></div>
+
+<!-- Navigation -->
+<nav id="navbar">
+  <div class="logo">SK</div>
+  <div class="nav-links" id="navLinks">
+    <a href="#home">Home</a>
+    <a href="#expertise">Expertise</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="menu-toggle" id="menuToggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</nav>
+
+<!-- Hero Section -->
+<section class="hero" id="home">
+  <div class="hero-content">
+    <h3>👋 Hello, I'm</h3>
+    <h1><span class="gradient-text">Sushanth Kummari</span></h1>
+    <h2 id="typing-text"></h2>
+    <p>
+      IAM-focused Systems Engineer with 5+ years of experience specializing in
+      <strong>CyberArk PAM</strong>, <strong>Active Directory</strong>,
+      <strong>Azure AD</strong>, and automation-driven security solutions.
+      Passionate about building scalable, secure infrastructure and eliminating
+      manual operations through intelligent automation.
+    </p>
+    <div class="hero-buttons">
+      <a href="#contact" class="btn btn-primary">Get In Touch</a>
+      <a href="#projects" class="btn btn-secondary">View Projects</a>
+    </div>
+    <div class="social-links">
+      <a href="mailto:sushanth3048@gmail.com" class="social-link" title="Email">
+        <i class="fas fa-envelope"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/sushanth-kng-844b73161" target="_blank" class="social-link" title="LinkedIn">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="https://github.com/sushanth3048/Portfolio" target="_blank" class="social-link" title="GitHub">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://sushanth3048.github.io/iamsushanth/" target="_blank" class="social-link" title="Portfolio">
+        <i class="fas fa-globe"></i>
+      </a>
+    </div>
+  </div>
+  <div class="hero-image">
+    <img src="KnG.jpg" alt="Sushanth Kummari">
+  </div>
+</section>
+
+<!-- Expertise Section -->
+<section id="expertise">
+  <div class="section-header">
+    <h2>🚀 Core Expertise</h2>
+    <p>What I specialize in and deliver with excellence</p>
+  </div>
+  <div class="expertise-grid">
+    <div class="expertise-card">
+      <div class="icon"><i class="fas fa-lock"></i></div>
+      <h3>CyberArk PAM Specialist</h3>
+      <p>Expert in vault architecture, safes, platforms, policies, privileged account lifecycle, and automation of onboarding/offboarding workflows.</p>
+    </div>
+    <div class="expertise-card">
+      <div class="icon"><i class="fas fa-robot"></i></div>
+      <h3>Automation Engineering</h3>
+      <p>PowerShell & Python scripting with REST API integrations to eliminate manual operations and improve operational efficiency by 80%+.</p>
+    </div>
+    <div class="expertise-card">
+      <div class="icon"><i class="fas fa-user-shield"></i></div>
+      <h3>Identity & Access Management</h3>
+      <p>End-to-end IAM solutions including Active Directory, Azure AD, identity lifecycle, access governance, and compliance auditing.</p>
+    </div>
+    <div class="expertise-card">
+      <div class="icon"><i class="fas fa-cloud"></i></div>
+      <h3>Cloud Infrastructure</h3>
+      <p>AWS IAM, EC2 management, hybrid cloud architecture, and secure workload deployment across on-prem and cloud environments.</p>
+    </div>
+    <div class="expertise-card">
+      <div class="icon"><i class="fas fa-certificate"></i></div>
+      <h3>PKI & Certificate Management</h3>
+      <p>Venafi-based certificate lifecycle automation, SSL/TLS management, renewal automation, and cryptographic compliance.</p>
+    </div>
+    <div class="expertise-card">
+      <div class="icon"><i class="fas fa-shield-alt"></i></div>
+      <h3>Security & Compliance</h3>
+      <p>SOX compliance, audit readiness, vulnerability remediation, security hardening, and least-privilege access implementation.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Experience Section -->
+<section id="experience">
+  <div class="section-header">
+    <h2>💼 Professional Journey</h2>
+    <p>5+ years of hands-on experience in enterprise IAM and security automation</p>
+  </div>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-content">
+        <h3>Systems Engineer III</h3>
+        <div class="company">FactSet</div>
+        <div class="duration">May 2023 - Present</div>
+        <p>
+          Leading CyberArk PAM operations, automation engineering with GitHub Actions,
+          Active Directory domain deployment, PKI management with Venafi, and BigFix
+          patch orchestration across enterprise environments.
+        </p>
+      </div>
+      <div class="timeline-dot"></div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-content">
+        <h3>Systems Engineer</h3>
+        <div class="company">R1 RCM</div>
+        <div class="duration">April 2023 - May 2023</div>
+        <p>
+          Managed Active Directory and Azure AD environments, developed PowerShell
+          automation workflows, and built expertise in cloud services and security best practices.
+        </p>
+      </div>
+      <div class="timeline-dot"></div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-content">
+        <h3>Technical Support Engineer</h3>
+        <div class="company">TeamWare Solutions (Microsoft)</div>
+        <div class="duration">Jan 2022 - Feb 2023</div>
+        <p>
+          Administered AD services, implemented LAPS, configured Kerberos delegation,
+          resolved authentication issues, and optimized domain controller performance.
+        </p>
+      </div>
+      <div class="timeline-dot"></div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-content">
+        <h3>Systems Administrator</h3>
+        <div class="company">JD Sports</div>
+        <div class="duration">Oct 2021 - Jan 2022</div>
+        <p>
+          Managed AD and Exchange environments, SCCM-based system deployment,
+          and provided technical support for authentication and access issues.
+        </p>
+      </div>
+      <div class="timeline-dot"></div>
+    </div>
+
+    <div class="timeline-item">
+      <div class="timeline-content">
+        <h3>Support Engineer</h3>
+        <div class="company">Pyramind IT (Wipro)</div>
+        <div class="duration">Apr 2020 - Oct 2021</div>
+        <p>
+          Provided end-user support, assisted in SCCM infrastructure maintenance,
+          performed server backups, and handled service requests within SLA timelines.
+        </p>
+      </div>
+      <div class="timeline-dot"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects">
+  <div class="section-header">
+    <h2>🛠️ Featured Projects</h2>
+    <p>Real-world problems solved through automation and innovation</p>
+  </div>
+  <div class="projects-grid">
+    <div class="project-card">
+      <div class="project-header">
+        <h3>🔐 CyberArk PAM Bulk Onboarding</h3>
+        <p class="tech-stack">PowerShell | CyberArk REST API | Automation</p>
+      </div>
+      <div class="project-body">
+        <p>
+          Developed enterprise-scale automation for bulk onboarding of privileged
+          accounts into CyberArk PAM, reducing manual effort by 90%.
+        </p>
+        <div class="project-features">
+          <span class="feature-tag">Automated Safe Creation</span>
+          <span class="feature-tag">Platform Assignment</span>
+          <span class="feature-tag">Policy Configuration</span>
+          <span class="feature-tag">Compliance Enforcement</span>
+        </div>
+        <a href="#" class="project-link">
+          Learn More <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <h3>📜 PKI Certificate Auto-Renewal</h3>
+        <p class="tech-stack">Venafi | PowerShell | Email Automation</p>
+      </div>
+      <div class="project-body">
+        <p>
+          Built intelligent certificate lifecycle automation with Venafi integration,
+          monitoring, auto-renewal, and deployment workflows.
+        </p>
+        <div class="project-features">
+          <span class="feature-tag">Expiry Monitoring</span>
+          <span class="feature-tag">Auto-Renewal</span>
+          <span class="feature-tag">Zero-Downtime Deployment</span>
+          <span class="feature-tag">Email Alerts</span>
+        </div>
+        <a href="#" class="project-link">
+          Learn More <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <h3>🛠️ BigFix Patch Orchestration</h3>
+        <p class="tech-stack">BigFix | AWS EC2 | GitHub Actions</p>
+      </div>
+      <div class="project-body">
+        <p>
+          Engineered end-to-end patch management automation with maintenance mode
+          handling, VIP exclusion, and compliance reporting.
+        </p>
+        <div class="project-features">
+          <span class="feature-tag">Automated Discovery</span>
+          <span class="feature-tag">Patch Deployment</span>
+          <span class="feature-tag">Compliance Validation</span>
+          <span class="feature-tag">Rollback Support</span>
+        </div>
+        <a href="#" class="project-link">
+          Learn More <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <h3>🌐 Active Directory Domain Deployment</h3>
+        <p class="tech-stack">Windows Server | DNS | Security Hardening</p>
+      </div>
+      <div class="project-body">
+        <p>
+          Led end-to-end deployment of new AD domain including DC promotion,
+          DNS integration, replication setup, and baseline security configuration.
+        </p>
+        <div class="project-features">
+          <span class="feature-tag">Domain Architecture</span>
+          <span class="feature-tag">DC Configuration</span>
+          <span class="feature-tag">GPO Setup</span>
+          <span class="feature-tag">Security Hardening</span>
+        </div>
+        <a href="#" class="project-link">
+          Learn More <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <h3>🤖 AI-Driven Support Automation</h3>
+        <p class="tech-stack">AI/ML | Python | Ticket Automation</p>
+      </div>
+      <div class="project-body">
+        <p>
+          Built basic AI automation to interact with users, triage issues,
+          answer FAQs, and intelligently route support tickets.
+        </p>
+        <div class="project-features">
+          <span class="feature-tag">Issue Triage</span>
+          <span class="feature-tag">FAQ Handling</span>
+          <span class="feature-tag">Auto-Routing</span>
+          <span class="feature-tag">NLP Integration</span>
+        </div>
+        <a href="#" class="project-link">
+          Learn More <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-header">
+        <h3>🏗️ Self-Hosted CyberArk Lab</h3>
+        <p class="tech-stack">CyberArk | Lab Setup | Security Testing</p>
+      </div>
+      <div class="project-body">
+        <p>
+          Implemented complete CyberArk PAM platform from scratch including vault,
+          PVWA, CPM, PSM setup, and target system onboarding.
+        </p>
+        <div class="project-features">
+          <span class="feature-tag">Vault Setup</span>
+          <span class="feature-tag">Component Installation</span>
+          <span class="feature-tag">Security Hardening</span>
+          <span class="feature-tag">Testing Environment</span>
+        </div>
+        <a href="#" class="project-link">
+          Learn More <i class="fas fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills">
+  <div class="section-header">
+    <h2>🧰 Technical Arsenal</h2>
+    <p>Tools, technologies, and platforms I work with daily</p>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-category">
+      <h3><i class="fas fa-shield-alt"></i> IAM & Security</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">CyberArk PAM</span>
+        <span class="skill-tag">Active Directory</span>
+        <span class="skill-tag">Azure AD / Entra ID</span>
+        <span class="skill-tag">PKI / Venafi</span>
+        <span class="skill-tag">LDAP</span>
+        <span class="skill-tag">Kerberos</span>
+        <span class="skill-tag">LAPS</span>
+        <span class="skill-tag">GPO</span>
+        <span class="skill-tag">RBAC</span>
+      </div>
+    </div>
+
+    <div class="skill-category">
+      <h3><i class="fas fa-code"></i> Automation & Scripting</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">PowerShell</span>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">REST APIs</span>
+        <span class="skill-tag">GitHub Actions</span>
+        <span class="skill-tag">CI/CD</span>
+        <span class="skill-tag">Bash</span>
+        <span class="skill-tag">JSON/XML</span>
+        <span class="skill-tag">HTML/CSS</span>
+      </div>
+    </div>
+
+    <div class="skill-category">
+      <h3><i class="fas fa-cloud"></i> Cloud & Infrastructure</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">AWS IAM</span>
+        <span class="skill-tag">AWS EC2</span>
+        <span class="skill-tag">Azure</span>
+        <span class="skill-tag">Windows Server</span>
+        <span class="skill-tag">IIS</span>
+        <span class="skill-tag">SQL Server</span>
+        <span class="skill-tag">DNS</span>
+        <span class="skill-tag">DFSR</span>
+      </div>
+    </div>
+
+    <div class="skill-category">
+      <h3><i class="fas fa-tools"></i> Management Tools</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">BigFix</span>
+        <span class="skill-tag">SCCM</span>
+        <span class="skill-tag">ServiceNow</span>
+        <span class="skill-tag">Remedy</span>
+        <span class="skill-tag">Splunk</span>
+        <span class="skill-tag">Grafana</span>
+        <span class="skill-tag">Kibana</span>
+        <span class="skill-tag">Git/GitHub</span>
+      </div>
+    </div>
+
+    <div class="skill-category">
+      <h3><i class="fas fa-graduation-cap"></i> Methodologies</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">ITIL</span>
+        <span class="skill-tag">Incident Management</span>
+        <span class="skill-tag">Change Management</span>
+        <span class="skill-tag">DevOps</span>
+        <span class="skill-tag">Agile</span>
+        <span class="skill-tag">SOX Compliance</span>
+        <span class="skill-tag">Audit Readiness</span>
+      </div>
+    </div>
+
+    <div class="skill-category">
+      <h3><i class="fas fa-brain"></i> Soft Skills</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">Problem Solving</span>
+        <span class="skill-tag">Security Mindset</span>
+        <span class="skill-tag">Automation Thinking</span>
+        <span class="skill-tag">Team Collaboration</span>
+        <span class="skill-tag">Documentation</span>
+        <span class="skill-tag">Root Cause Analysis</span>
+        <span class="skill-tag">Continuous Learning</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+  <div class="section-header">
+    <h2>📬 Let's Connect</h2>
+    <p>Open to opportunities, collaborations, and interesting conversations</p>
+  </div>
+  <div class="contact-container">
+    <div class="contact-grid">
+      <div class="contact-card">
+        <i class="fas fa-envelope"></i>
+        <h3>Email</h3>
+        <a href="mailto:sushanth3048@gmail.com">sushanth3048@gmail.com</a>
+      </div>
+      <div class="contact-card">
+        <i class="fab fa-linkedin"></i>
+        <h3>LinkedIn</h3>
+        <a href="https://www.linkedin.com/in/sushanth-kng-844b73161" target="_blank">Connect on LinkedIn</a>
+      </div>
+      <div class="contact-card">
+        <i class="fas fa-file-pdf"></i>
+        <h3>Resume</h3>
+        <a href="https://github.com/sushanth3048/Portfolio/blob/main/Sushanth%20Kummari.pdf" target="_blank">Download PDF</a>
+      </div>
+      <div class="contact-card">
+        <i class="fas fa-globe"></i>
+        <h3>Resume</h3>
+        <a href="https://sushanth3048.github.io/iamsushanth/" target="_blank">View Online</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>&copy; 2026 Sushanth Kummari | Systems Engineer III | IAM & CyberArk Specialist</p>
+  <p style="margin-top: 10px; font-size: 0.9rem;">
+    Built with passion, powered by automation
+  </p>
+  <div class="social-links">
+    <a href="mailto:sushanth3048@gmail.com" class="social-link">
+      <i class="fas fa-envelope"></i>
+    </a>
+    <a href="https://www.linkedin.com/in/sushanth-kng-844b73161" target="_blank" class="social-link">
+      <i class="fab fa-linkedin-in"></i>
+    </a>
+    <a href="https://github.com/sushanth3048/Portfolio" target="_blank" class="social-link">
+      <i class="fab fa-github"></i>
+    </a>
+  </div>
+</footer>
+
+<!-- Scroll to Top Button -->
+<div class="scroll-top" id="scrollTop">
+  <i class="fas fa-arrow-up"></i>
+</div>
+
+<script>
+// Page Loader
+window.addEventListener('load', () => {
+  const loader = document.querySelector('.loader');
+  setTimeout(() => {
+    loader.classList.add('hidden');
+  }, 1000);
+});
+
+// Create Particles
+const particlesContainer = document.getElementById('particles');
+for (let i = 0; i < 50; i++) {
+  const particle = document.createElement('div');
+  particle.classList.add('particle');
+  particle.style.left = Math.random() * 100 + '%';
+  particle.style.top = Math.random() * 100 + '%';
+  particle.style.animationDelay = Math.random() * 20 + 's';
+  particle.style.animationDuration = (Math.random() * 10 + 10) + 's';
+  particlesContainer.appendChild(particle);
+}
+
+// Typing Effect
+const typingText = document.getElementById('typing-text');
+const titles = [
+  'Systems Engineer III',
+  'CyberArk PAM Specialist',
+  'IAM Security Expert',
+  'Automation Engineer',
+  'Infrastructure Architect'
+];
+let titleIndex = 0;
+let charIndex = 0;
+let isDeleting = false;
+
+function type() {
+  const currentTitle = titles[titleIndex];
+
+  if (isDeleting) {
+    typingText.textContent = currentTitle.substring(0, charIndex - 1);
+    charIndex--;
+  } else {
+    typingText.textContent = currentTitle.substring(0, charIndex + 1);
+    charIndex++;
+  }
+
+  let typeSpeed = isDeleting ? 50 : 100;
+
+  if (!isDeleting && charIndex === currentTitle.length) {
+    typeSpeed = 2000;
+    isDeleting = true;
+  } else if (isDeleting && charIndex === 0) {
+    isDeleting = false;
+    titleIndex = (titleIndex + 1) % titles.length;
+    typeSpeed = 500;
+  }
+
+  setTimeout(type, typeSpeed);
+}
+
+// Start typing effect
+setTimeout(type, 1000);
+
+// Navbar Scroll Effect
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 100) {
+    navbar.classList.add('scrolled');
+  } else {
+    navbar.classList.remove('scrolled');
+  }
+});
+
+// Mobile Menu Toggle
+const menuToggle = document.getElementById('menuToggle');
+const navLinks = document.getElementById('navLinks');
+
+menuToggle.addEventListener('click', () => {
+  navLinks.classList.toggle('active');
+});
+
+// Close mobile menu on link click
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('active');
+  });
+});
+
+// Intersection Observer for Sections
+const sections = document.querySelectorAll('section');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, {
+  threshold: 0.1,
+  rootMargin: '0px 0px -100px 0px'
+});
+
+sections.forEach(section => {
+  observer.observe(section);
+});
+
+// Scroll to Top Button
+const scrollTop = document.getElementById('scrollTop');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 500) {
+    scrollTop.classList.add('visible');
+  } else {
+    scrollTop.classList.remove('visible');
+  }
+});
+
+scrollTop.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
+
+// Smooth Scroll for Anchor Links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  });
+});
+
+// Add animation to skill tags on hover
+document.querySelectorAll('.skill-tag').forEach((tag, index) => {
+  tag.style.animationDelay = `${index * 0.05}s`;
+});
+
+// Parallax Effect on Hero
+window.addEventListener('scroll', () => {
+  const scrolled = window.pageYOffset;
+  const hero = document.querySelector('.hero');
+  if (hero) {
+    hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+  }
+});
+
+// Console Easter Egg
+console.log('%c👋 Hey there!', 'font-size: 24px; font-weight: bold; color: #667eea;');
+console.log('%cInterested in how this portfolio was built?', 'font-size: 16px; color: #764ba2;');
+console.log('%cLet\'s connect! https://www.linkedin.com/in/sushanth-kng-844b73161', 'font-size: 14px; color: #38bdf8;');
+</script>
+
+</body>
+</html>
